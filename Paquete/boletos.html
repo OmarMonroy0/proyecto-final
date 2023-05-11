@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="estilo.css" />
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boletos</title>
+    <script src="./index.js"></script>
+  </head>
+
+  <!-- Menu -->
+  <header>
+    <img class="logo" src="./public/logo.png" />
+    <nav>
+      <ul>
+        <li><img class="iconos" src="./public/hogar.png" /></li>
+        <li class="Texto"><a href="index.html">Inicio</a></li>
+        <li><img class="iconos" src="./public/avion.png" /></li>
+        <li class="Texto"><a href="boletos.html">Vuelos</a></li>
+        <li><img class="iconos" src="./public/hotel.png" /></li>
+        <li class="Texto"><a href="hotel.html">Hoteles</a></li>
+        <li><img class="iconos" src="./public/paquete.png" /></li>
+        <li class="Texto"><a href="paquete.html">Paquetes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <body id="vuelos">
+    <main>
+      <form action="pago.html" class="formulario" id="formulario">
+        <!-- Select para origen -->
+        <div class="formulario-grupo" id="grupo__Partida">
+          <label for="origen" class="formulario__label">Salir de:</label>
+          <div class="formulario-grupo-input">
+            <select
+              class="formulario__input"
+              name="origen"
+              id="origen"
+              onchange="LeerOrigen()"
+            >
+              <option value="DestinoP 1" selected>Cancun, Quintana Roo</option>
+              <option value="DestinoP 2">Oaxaca, Oaxaca</option>
+              <option value="DestinoP 3">Mazatlan, Sinaloa</option>
+              <option value="DestinoP 4">
+                Huasteca Potosina, San Luis Potosi
+              </option>
+              <option value="DestinoP 5">Bacalar, Quintana Roo</option>
+              <option value="DestinoP 6">Cd. Mexico</option>
+            </select>
+          </div>
+        </div>
+        <!-- Select para destino -->
+        <div class="formulario-grupo" id="grupo__destino">
+          <label for="destino" class="formulario__label">Llegar a:</label>
+          <div class="formulario-grupo-input">
+            <select
+              class="formulario__input"
+              name="destino"
+              id="destino"
+              onchange="LeerDestino()"
+            >
+              <option value="DestinoD 1" selected>Cancun, Quintana Roo</option>
+              <option value="DestinoD 2">Oaxaca, Oaxaca</option>
+              <option value="DestinoD 3">Mazatlan, Sinaloa</option>
+              <option value="DestinoD 4">
+                Huasteca Potosina, San Luis Potosi
+              </option>
+              <option value="DestinoD 5">Bacalar, Quintana Roo</option>
+              <option value="DestinoD 6">Cd. Mexico</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="formularioA">
+          <!-- Fecha de salida -->
+          <div class="formulario-grupo" id="grupo__fechasalida">
+            <label for="fechasalida" class="formulario__label"
+              >Fecha de salida</label
+            >
+            <div class="formulario-grupo-input">
+              <input
+                type="date"
+                class="formulario-input"
+                name="fechaSalida"
+                id="fechaSalida"
+                onchange="FechaSalidaVuelo()"
+              />
+            </div>
+          </div>
+
+          <!-- Fecha de regreso -->
+          <div class="formulario-grupo" id="grupo__fecharegreso">
+            <label for="fecharegreso" class="formulario__label"
+              >Fecha de regreso</label
+            >
+            <div class="formulario-grupo-input">
+              <input
+                type="date"
+                class="formulario__input"
+                name="fecharegreso"
+                id="fechaRegreso"
+                onchange="FechaRegreso()"
+              />
+            </div>
+          </div>
+
+          <!-- Seleccionar cantidad de personas -->
+          <div class="formulario-grupo" id="grupo__Personas">
+            <label for="Personas" class="formulario__label"
+              >Cantidad de personas:</label
+            >
+            <div class="formulario-grupo-input">
+              <input
+                type="number"
+                class="formulario__input"
+                name="Personas"
+                id="Personas"
+                onchange="PersonasVuelo()"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="formularioB">
+          <!-- Select de tipo de asiento-->
+          <div class="formulario-grupo" id="grupo__TipoViaje">
+            <label for="TipoViaje" class="formulario__label"
+              >Tipo de asiento</label
+            >
+            <div class="formulario-grupo-input">
+              <select
+                class="formulario__input"
+                name="Asiento"
+                id="Asiento"
+                onchange="TipoAsiento()"
+              >
+                <option value="Asiento 1" selected>Asiento tipo 1</option>
+                <option value="Asiento 2">Asiento 2</option>
+                <option value="Asiento 3">Asiento 3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="formularioA">
+          <!--Tipos de viaje -->
+          <div class="formulario-grupo" id="grupo__viaje1">
+            <label class="formulario__label">Tipo de viaje: </label>
+            <label class="formulario__label">
+              <input
+                class="formulario_checkbox"
+                type="checkbox"
+                name="TViaje1"
+                id="TViaje1"
+                onclick="TipoVuelo1()"
+              />
+              Sencillo
+            </label>
+          </div>
+
+          <div class="formulario-grupo"><br /></div>
+
+          <div class="formulario-grupo" id="grupo__viaje2">
+            <label class="formulario__label">
+              <input
+                class="formulario_checkbox"
+                type="checkbox"
+                name="TViaje2"
+                id="TViaje2"
+                onclick="TipoVuelo2()"
+              />
+              Redondo
+            </label>
+          </div>
+
+       <div class="formulario-grupo formulario-grupo-btn-enviar">
+            <label class="formulario__label" for="boton" id="PrecioB"
+              >$0000.00</label
+            >
+            <button
+              name="boton"
+              type="submit"
+              class="grow_skew_backward formulario__btn "
+              onclick="BotonBoletos()"
+            >
+              Pagar
+            </button>
+          </div>
+          <!-- Boton para pagar -->
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

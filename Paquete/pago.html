@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="estilo.css" />
+
+<html lang="en" background-image="playa.webp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pago</title>
+    <script src="./index.js"></script>
+  </head>
+
+  <header>
+    <!-- Menu -->
+    <img class="logo" src="./public/logo.png" />
+    <nav>
+      <ul>
+        <li><img class="iconos" src="./public/hogar.png" /></li>
+        <li class="Texto"><a href="index.html">Inicio</a></li>
+        <li><img class="iconos" src="./public/avion.png" /></li>
+        <li class="Texto"><a href="boletos.html">Vuelos</a></li>
+        <li><img class="iconos" src="./public/hotel.png" /></li>
+        <li class="Texto"><a href="hotel.html">Hoteles</a></li>
+        <li><img class="iconos" src="./public/paquete.png" /></li>
+        <li class="Texto"><a href="paquete.html">Paquetes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <body id="pago">
+    <main>
+      <form action="pago.html" class="formulario" id="formulario">
+        <!-- Espacio para correo -->
+        <div class="formularioA">
+          <div class="formulario-grupo correo" id="grupo__Correo">
+            <label for="Correo" class="formulario__label">Correo</label>
+            <div class="formulario-grupo-input">
+              <input
+                type="text"
+                class="formulario__input"
+                onchange="LeerCorreo()"
+                name="Correo"
+                id="correo"
+              />
+            </div>
+          </div>
+
+          <!-- Espacio para No.Tarjeta -->
+          <div class="formulario-grupo tarjeta" id="grupo__Notarjeta">
+            <label for="Notarjeta" class="formulario__label">No. Tarjeta</label>
+            <div class="formulario-grupo-input">
+              <input
+                type="text"
+                class="formulario__input"
+                name="Notarjeta"
+                id="tarjeta"
+                onchange="LeerNumeroTarjeta()"
+              />
+            </div>
+          </div>
+
+          <!-- Espacio para CVV -->
+          <div class="formulario-grupo Reducir" id="grupo__CVV">
+            <label for="CVV" class="formulario__label">CVV</label>
+            <div class="formulario-grupo-input">
+              <input
+                type="text"
+                class="formulario__input"
+                name="CVV"
+                id="cvv"
+                onchange="LeerCVV()"
+              />
+            </div>
+          </div>
+
+          <!-- Espacio para fecha -->
+          <div class="formulario-grupo" id="grupo__Fecha">
+            <label for="Fecha" class="formulario__label">Fecha</label>
+            <div class="formulario-grupo-input">
+              <input
+                type="text"
+                class="formulario__input"
+                name="Fecha"
+                id="fecha-pago"
+                onchange="LeerFecha()"
+              />
+            </div>
+          </div>
+
+          <div class="formulario-grupo"><br /></div>
+        </div>
+
+        <!-- Boton para pagar -->
+        <div class="formulario-grupo formulario-grupo-btn-enviar">
+          <label class="formulario__label" for="boton" id="PrecioPago"
+            >$0000.00</label
+          >
+          <button
+            name="boton"
+            type="submit"
+            class="grow_skew_backward formulario__btn"
+            onclick="BotonPago()"
+          >
+            Pagar
+          </button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="estilo.css" />
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paquete</title>
+    <script src="./index.js"></script>
+  </head>
+
+  <header>
+    <!--Menu -->
+    <img class="logo" src="./public/logo.png" />
+    <nav>
+      <ul>
+        <li><img class="iconos" src="./public/hogar.png" /></li>
+        <li class="Texto"><a href="index.html">Inicio</a></li>
+        <li><img class="iconos" src="./public/avion.png" /></li>
+        <li class="Texto"><a href="boletos.html">Vuelos</a></li>
+        <li><img class="iconos" src="./public/hotel.png" /></li>
+        <li class="Texto"><a href="hotel.html">Hoteles</a></li>
+        <li><img class="iconos" src="./public/paquete.png" /></li>
+        <li class="Texto"><a href="paquete.html">Paquetes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <body id="paquete">
+    <main>
+      <!--Select de paquete -->
+      <form action="pago.html" class="formulario" id="formulario">
+        <div class="formulario-grupo" id="grupo__Paquete">
+          <label for="Paquete" class="formulario__label">Paquete</label>
+          <div class="formulario-grupo-input">
+            <select
+              class="formulario__input"
+              name="Paquete"
+              id="Paquete"
+              onchange="LeerPaquete()"
+            >
+              <option value="Paquete 1" selected>Familiar trip</option>
+              <option value="Paquete 2">Solo para ti</option>
+              <option value="Paquete 3">La pareja del momento</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="formularioA">
+          <!--Fecha de llegada paquete -->
+          <div class="formulario-grupo" id="grupo__fechallegadaPaquete">
+            <label for="fechallegada" class="formulario__label"
+              >Fecha de llegada</label
+            >
+            <div class="formulario-grupo-input">
+              <input
+                type="date"
+                class="formulario__input"
+                name="fechallegada"
+                id="fechaLlegadaPaquete"
+                onchange="LeerFechaLlegada()"
+              />
+            </div>
+          </div>
+
+          <!--Fecha de salida paquete -->
+          <div class="formulario-grupo" id="grupo__fechasalidapaquete">
+            <label for="fechasalida" class="formulario__label"
+              >Fecha de salida</label
+            >
+            <div class="formulario-grupo-input">
+              <input
+                type="date"
+                class="formulario__input"
+                name="fechasalida"
+                id="fechaSalidaPaquete"
+                onchange="LeerFechaSalida()"
+              />
+            </div>
+          </div>
+
+          <!--Cantidad de personas -->
+          <div class="formulario-grupo" id="grupo__Personas">
+            <label for="Personas" class="formulario__label"
+              >Cantidad de personas:</label
+            >
+            <div class="formulario-grupo-input">
+              <input
+                type="number"
+                value="-1;"
+                class="formulario__input"
+                name="Personas"
+                id="Personas"
+                onclick="LeerPersonas()"
+              />
+            </div>
+          </div>
+
+          <div class="formulario-grupo"><br /></div>
+          <div class="formulario-grupo"><br /></div>
+        </div>
+
+        <!-- Boton para pagar -->
+        <div class="formulario-grupo formulario-grupo-btn-enviar">
+          <label class="formulario__label" for="boton" id="PrecioPa"
+            >$0000.00</label
+          >
+          <button
+            id="pago-paquete"
+            name="boton"
+            onclick="BotonPaquetes()"
+            type="submit"
+            class="grow_skew_backward formulario__btn"
+          >
+            Pagar
+          </button>
+        </div>
+      </form>
+
+      <!--Informacion de paquetes -->
+      <div class="Paquetes">
+        <div class="Paquetes2">
+          <label class="inicio" for="">Informacion de paquetes:</label>
+          <p class="Titulo">Familiar trip</p>
+          <ul>
+            <li>Viaje redondo a Baja california Sur</li>
+            <li>Recogerte en el aeropuerto</li>
+            <li>
+              Ofrecemos un hospedaje en uno de los mejores hoteles de la zona
+            </li>
+            <li>Y las mejores habitaciones familiares</li>
+            <li>Incluye tour turistico por la ciudad</li>
+            <li>Alimentos dentro del hotel incluidos</li>
+          </ul>
+          <div class="Imagenes"> 
+          <img class="imagen" src="./public/baja-california.png" />
+           <img class="imagen" src="./public/HotelBCS.jpeg" />
+               </div> 
+          <p class="Titulo">Paquete Solo para ti</p>
+          <ul>
+            <li>
+              Viaje de ida, y regresa cuando quieras a TULUM (vibra alto XD )
+            </li>
+            <li>
+              También una estadía en un lugar tranquilo, sin niños, sin ruido,
+              solo tú
+            </li>
+            <li>Y los mejores lugares para pasar unas vacaciones memorables</li>
+            <li>Incluye tour turistico por la ciudad</li>
+            <li>Alimentos dentro del hotel incluidos</li>
+          </ul>
+ <div class="Imagenes"> 
+          <img class="imagen" src="./public/tulum.png" />
+      <img class="imagen" src="./public/HotelT.jpeg" />
+</div>
+          <p class="Titulo">La pareja del momento</p>
+          <ul>
+            <li>
+              Viaje de 7 dias y 6 noches a una de las ciudades más románticas y
+              accesibles del mundo Venecia
+            </li>
+            <li>En el hotel más romántico de la ciudad</li>
+            <li>Y un tour romántico por la ciudad</li>
+            <li>Incluye cena en el mejor restaurante de la ciudad</li>
+            <li>Alimentos dentro del hotel incluidos</li>
+          </ul>
+ <div class="Imagenes"> 
+          <img class="imagen" src="./public/venecia.png" />
+    <img class="imagen" src="./public/HotelV.jpeg" />
+   </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

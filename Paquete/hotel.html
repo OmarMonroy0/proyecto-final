@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="estilo.css" />
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel</title>
+    <script src="./index.js"></script>
+  </head>
+
+  <header>
+    <!-- Menu -->
+    <img class="logo" src="./public/logo.png" />
+    <nav>
+      <ul>
+        <li><img class="iconos" src="./public/hogar.png" /></li>
+        <li class="Texto"><a href="index.html">Inicio</a></li>
+        <li><img class="iconos" src="./public/avion.png" /></li>
+        <li class="Texto"><a href="boletos.html">Vuelos</a></li>
+        <li><img class="iconos" src="./public/hotel.png" /></li>
+        <li class="Texto"><a href="hotel.html">Hoteles</a></li>
+        <li><img class="iconos" src="./public/paquete.png" /></li>
+        <li class="Texto"><a href="paquete.html">Paquetes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <body id="hotel">
+    <main>
+      <form action="pago.html" class="formulario" id="formulario">
+        <!-- Select de hotel -->
+        <div class="formulario-grupo" id="grupo__Hotel">
+          <label for="Hotel" class="formulario__label">Hotel</label>
+          <div class="formulario-grupo-input">
+            <select
+              class="formulario__input"
+              name="Hotel"
+              id="Hotel"
+              onclick="LecturaHotel()"
+            >
+              <option value="Hotel 1" selected>Hotel 1</option>
+              <option value="Hotel 2">Hotel 2</option>
+              <option value="Hotel 3">Hotel 3</option>
+              <option value="Hotel 4">Hotel 4</option>
+              <option value="Hotel 5">Hotel 5</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="formularioA">
+          <!--Fecha de llegada al hotel-->
+          <div class="formulario-grupo" id="grupo__fechallegada">
+            <label for="fechallegada" class="formulario__label"
+              >Fecha de llegada</label
+            >
+            <div class="formulario-grupo-input">
+              <input
+                type="date"
+                class="formulario__input"
+                name="fechallegada"
+                id="fechallegada"
+                onchange="LlegadaHotel()"
+              />
+            </div>
+          </div>
+
+          <!--Fecha de salida del hotel-->
+          <div class="formulario-grupo" id="grupo__fechasalida">
+            <label for="fechasalida" class="formulario__label"
+              >Fecha de salida</label
+            >
+            <div class="formulario-grupo-input">
+              <input
+                type="date"
+                class="formulario__input"
+                name="fechasalida"
+                id="fecharegreso"
+                onchange="RegresoHotel()"
+              />
+            </div>
+          </div>
+
+          <!--Cantidad de cuartos-->
+          <div class="formulario-grupo" id="grupo__Cuartos">
+            <label for="Cuartos" class="formulario__label"
+              >Cantidad de Cuartos:</label
+            >
+            <div class="formulario-grupo-input">
+              <input
+                type="number"
+                class="formulario__input"
+                name="Cuartos"
+                id="Cuartos"
+                onchange="CuartosHotel()"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="formualrioB">
+          <!--Tipo de paquete de hotel-->
+          <div class="formulario-grupo" id="grupo__paquete">
+            <label for="paquete" class="formulario__label">Paquete</label>
+            <div class="formulario-grupo-input">
+              <select
+                class="formulario__input"
+                name="tipo_paquete"
+                id="tipo_paquete"
+                onclick="TipoPaquete()"
+              >
+                <option value="Todo Incluido" selected>Todo incluido</option>
+                <option value="Solo Habitacion" selected>
+                  Solo habitacion
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!--Tipo de habitacion-->
+        <div class="formulario-grupo" id="grupo__habitacion1">
+          <label class="formulario__label">Tipo de habitacion:</label>
+          <label class="formulario__label">
+            <input
+              class="formulario_checkbox"
+              type="checkbox"
+              name="habitacion1"
+              id="habitacion1"
+              onclick="Habitacion1()"
+            />
+            Sencilla
+          </label>
+        </div>
+
+        <div class="formulario-grupo" id="grupo__habitacion2">
+          <label class="formulario__label">
+            <input
+              class="formulario_checkbox"
+              type="checkbox"
+              name="habitacion2"
+              id="habitacion2"
+              onclick="Habitacion2()"
+            />
+            Doble
+          </label>
+        </div>
+
+        <div class="formulario-grupo" id="grupo__habitacion3">
+          <label class="formulario__label">
+            <input
+              class="formulario_checkbox"
+              type="checkbox"
+              name="habitacion3"
+              id="habitacion3"
+              onclick="Habitacion3()"
+            />
+            Individual
+          </label>
+        </div>
+
+        <!-- Boton para pagar -->
+
+        <div class="formulario-grupo formulario-grupo-btn-enviar">
+          <label class="formulario__label" for="boton" id="pagar"
+            >$0000.00</label
+          >
+          <button
+            name="boton"
+            type="submit"
+            class="grow_skew_backward formulario__btn "
+            onclick="BotonHotel()"
+          >
+            Pagar
+          </button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
